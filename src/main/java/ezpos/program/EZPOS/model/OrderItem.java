@@ -16,7 +16,7 @@ public class OrderItem {
     private double total;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "order_item_id")
-    private ArrayList<Item> items = new ArrayList<>();
+    private ArrayList<Product> products = new ArrayList<>();
     private String status;
     @CreationTimestamp
     private Date createdDate;
@@ -45,12 +45,12 @@ public class OrderItem {
         this.total = total;
     }
 
-    public ArrayList<Item> getItems() {
-        return items;
+    public ArrayList<Product> getItems() {
+        return products;
     }
 
-    public void setItems(ArrayList<Item> items) {
-        this.items = items;
+    public void setItems(ArrayList<Product> products) {
+        this.products = products;
     }
 
     public String getStatus() {

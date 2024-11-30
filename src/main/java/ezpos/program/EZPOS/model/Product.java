@@ -3,8 +3,8 @@ package ezpos.program.EZPOS.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "item")
-public class Item {
+@Table(name = "product")
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
