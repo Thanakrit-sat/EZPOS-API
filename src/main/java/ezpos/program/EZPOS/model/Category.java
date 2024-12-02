@@ -11,9 +11,11 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(nullable = false, unique = true)
     private String name;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "category_id")
+    @Column(nullable = true)
     private ArrayList<AddOnItem> addOnItems = new ArrayList<>();
 
     public long getId() {

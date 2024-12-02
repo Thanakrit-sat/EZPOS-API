@@ -12,13 +12,18 @@ public class OrderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(nullable = false)
     private double price;
+    @Column(nullable = false)
     private double total;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "order_item_id")
     private ArrayList<Product> products = new ArrayList<>();
+    @Column(nullable = false)
     private String status;
     @CreationTimestamp
+    @Column(nullable = false)
     private Date createdDate;
 
     public long getId() {
