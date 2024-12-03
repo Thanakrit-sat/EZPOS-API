@@ -14,8 +14,6 @@ public class OrderItem {
     private long id;
 
     @Column(nullable = false)
-    private double price;
-    @Column(nullable = false)
     private double total;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "order_item_id")
@@ -32,14 +30,6 @@ public class OrderItem {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public double getTotal() {
